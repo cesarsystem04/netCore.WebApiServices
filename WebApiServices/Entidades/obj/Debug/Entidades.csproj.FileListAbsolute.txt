@@ -1,0 +1,12 @@
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\Entidades.dll
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\Entidades.pdb
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\obj\Debug\Entidades.dll
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\obj\Debug\Entidades.pdb
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\Entidades.dll.config
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\EntityFramework.dll
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\EntityFramework.xml
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\github\netCore.WebApiServices\WebApiServices\Entidades\obj\Debug\Entidades.csproj.CopyComplete

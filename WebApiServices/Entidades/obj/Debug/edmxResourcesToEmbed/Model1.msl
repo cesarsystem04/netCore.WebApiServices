@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AppServiceDBModelStoreContainer" CdmEntityContainer="AppServiceDBEntities">
+    <EntitySetMapping Name="Aplicacion">
+      <EntityTypeMapping TypeName="AppServiceDBModel.Aplicacion">
+        <MappingFragment StoreEntitySet="Aplicacion">
+          <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+          <ScalarProperty Name="idResourceBanner" ColumnName="idResourceBanner" />
+          <ScalarProperty Name="idResourceLogo" ColumnName="idResourceLogo" />
+          <ScalarProperty Name="idResourceImgHome" ColumnName="idResourceImgHome" />
+          <ScalarProperty Name="idResourceImgReplicaDer" ColumnName="idResourceImgReplicaDer" />
+          <ScalarProperty Name="idResourceImgReplicaIzq" ColumnName="idResourceImgReplicaIzq" />
+          <ScalarProperty Name="idCodigoAmbiente" ColumnName="idCodigoAmbiente" />
+          <ScalarProperty Name="nbAplicacion" ColumnName="nbAplicacion" />
+          <ScalarProperty Name="ActivateLog" ColumnName="ActivateLog" />
+          <ScalarProperty Name="dsTitulo" ColumnName="dsTitulo" />
+          <ScalarProperty Name="dsSubTitulo" ColumnName="dsSubTitulo" />
+          <ScalarProperty Name="noVersion" ColumnName="noVersion" />
+          <ScalarProperty Name="nbInstanciaDB" ColumnName="nbInstanciaDB" />
+          <ScalarProperty Name="nbDB" ColumnName="nbDB" />
+          <ScalarProperty Name="CreadoPor" ColumnName="CreadoPor" />
+          <ScalarProperty Name="feCreacion" ColumnName="feCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DataArea">
+      <EntityTypeMapping TypeName="AppServiceDBModel.DataArea">
+        <MappingFragment StoreEntitySet="DataArea">
+          <ScalarProperty Name="cvCia" ColumnName="cvCia" />
+          <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+          <ScalarProperty Name="nbEmpresa" ColumnName="nbEmpresa" />
+          <ScalarProperty Name="CreadoPor" ColumnName="CreadoPor" />
+          <ScalarProperty Name="feCreacion" ColumnName="feCreacion" />
+          <ScalarProperty Name="esVirtual" ColumnName="esVirtual" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpresaXVirtual">
+      <EntityTypeMapping TypeName="AppServiceDBModel.EmpresaXVirtual">
+        <MappingFragment StoreEntitySet="EmpresaXVirtual">
+          <ScalarProperty Name="cvCiaVirtual" ColumnName="cvCiaVirtual" />
+          <ScalarProperty Name="cvCia" ColumnName="cvCia" />
+          <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionalidad">
+      <EntityTypeMapping TypeName="AppServiceDBModel.Funcionalidad">
+        <MappingFragment StoreEntitySet="Funcionalidad">
+          <ScalarProperty Name="idFuncionalidad" ColumnName="idFuncionalidad" />
+          <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+          <ScalarProperty Name="idCodigoCategoria" ColumnName="idCodigoCategoria" />
+          <ScalarProperty Name="nbFuncionalidad" ColumnName="nbFuncionalidad" />
+          <ScalarProperty Name="dsFuncionalidad" ColumnName="dsFuncionalidad" />
+          <ScalarProperty Name="nbComponente" ColumnName="nbComponente" />
+          <ScalarProperty Name="dsTitulo" ColumnName="dsTitulo" />
+          <ScalarProperty Name="dsRutaImagen" ColumnName="dsRutaImagen" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="esConsultar" ColumnName="esConsultar" />
+          <ScalarProperty Name="esActualizar" ColumnName="esActualizar" />
+          <ScalarProperty Name="esAgregar" ColumnName="esAgregar" />
+          <ScalarProperty Name="esImprimir" ColumnName="esImprimir" />
+          <ScalarProperty Name="esEspecial" ColumnName="esEspecial" />
+          <ScalarProperty Name="esContent" ColumnName="esContent" />
+          <ScalarProperty Name="urlRutaContent" ColumnName="urlRutaContent" />
+          <ScalarProperty Name="noFilasVisionGeneral" ColumnName="noFilasVisionGeneral" />
+          <ScalarProperty Name="idFuncionalidadPadre" ColumnName="idFuncionalidadPadre" />
+          <ScalarProperty Name="idCodigoTipoOperacion" ColumnName="idCodigoTipoOperacion" />
+          <ScalarProperty Name="noOrden" ColumnName="noOrden" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionalidadXRol">
+      <EntityTypeMapping TypeName="AppServiceDBModel.FuncionalidadXRol">
+        <MappingFragment StoreEntitySet="FuncionalidadXRol">
+          <ScalarProperty Name="codRol" ColumnName="codRol" />
+          <ScalarProperty Name="idFuncionalidad" ColumnName="idFuncionalidad" />
+          <ScalarProperty Name="cvDominio" ColumnName="cvDominio" />
+          <ScalarProperty Name="esConsultar" ColumnName="esConsultar" />
+          <ScalarProperty Name="esActualizar" ColumnName="esActualizar" />
+          <ScalarProperty Name="esAgregar" ColumnName="esAgregar" />
+          <ScalarProperty Name="esImprimir" ColumnName="esImprimir" />
+          <ScalarProperty Name="esEspecial" ColumnName="esEspecial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuMaster">
+      <EntityTypeMapping TypeName="AppServiceDBModel.MenuMaster">
+        <MappingFragment StoreEntitySet="MenuMaster">
+          <ScalarProperty Name="idMenuMaster" ColumnName="idMenuMaster" />
+          <ScalarProperty Name="idFuncionalidad" ColumnName="idFuncionalidad" />
+          <ScalarProperty Name="idMenuMasterParent" ColumnName="idMenuMasterParent" />
+          <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+          <ScalarProperty Name="idCodigoCategoria" ColumnName="idCodigoCategoria" />
+          <ScalarProperty Name="nbOpcion" ColumnName="nbOpcion" />
+          <ScalarProperty Name="noOrden" ColumnName="noOrden" />
+          <ScalarProperty Name="dsRutaImagen" ColumnName="dsRutaImagen" />
+          <ScalarProperty Name="dsToolTip" ColumnName="dsToolTip" />
+          <ScalarProperty Name="codOpcionValue" ColumnName="codOpcionValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rol">
+      <EntityTypeMapping TypeName="AppServiceDBModel.Rol">
+        <MappingFragment StoreEntitySet="Rol">
+          <ScalarProperty Name="codRol" ColumnName="codRol" />
+          <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+          <ScalarProperty Name="nbRol" ColumnName="nbRol" />
+          <ScalarProperty Name="dsRol" ColumnName="dsRol" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RolXDominio">
+      <EntityTypeMapping TypeName="AppServiceDBModel.RolXDominio">
+        <MappingFragment StoreEntitySet="RolXDominio">
+          <ScalarProperty Name="codRol" ColumnName="codRol" />
+          <ScalarProperty Name="cvDominio" ColumnName="cvDominio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="AppServiceDBModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="nbAlias" ColumnName="nbAlias" />
+          <ScalarProperty Name="idCodigoTipoCuenta" ColumnName="idCodigoTipoCuenta" />
+          <ScalarProperty Name="nbLanguageCulture" ColumnName="nbLanguageCulture" />
+          <ScalarProperty Name="noEmpleado" ColumnName="noEmpleado" />
+          <ScalarProperty Name="nbEmpleado" ColumnName="nbEmpleado" />
+          <ScalarProperty Name="dsMail" ColumnName="dsMail" />
+          <ScalarProperty Name="esActivo" ColumnName="esActivo" />
+          <ScalarProperty Name="feRegistro" ColumnName="feRegistro" />
+          <ScalarProperty Name="esSuperUsuario" ColumnName="esSuperUsuario" />
+          <ScalarProperty Name="dsEmpresa" ColumnName="dsEmpresa" />
+          <ScalarProperty Name="esNCPermitido" ColumnName="esNCPermitido" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioXRol">
+      <EntityTypeMapping TypeName="AppServiceDBModel.UsuarioXRol">
+        <MappingFragment StoreEntitySet="UsuarioXRol">
+          <ScalarProperty Name="codRol" ColumnName="codRol" />
+          <ScalarProperty Name="nbAlias" ColumnName="nbAlias" />
+          <ScalarProperty Name="noOrden" ColumnName="noOrden" />
+          <ScalarProperty Name="esPrincipal" ColumnName="esPrincipal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="AplicacionXUsuario" TypeName="AppServiceDBModel.AplicacionXUsuario" StoreEntitySet="AplicacionXUsuario">
+      <EndProperty Name="Aplicacion">
+        <ScalarProperty Name="codAplicacion" ColumnName="codAplicacion" />
+      </EndProperty>
+      <EndProperty Name="Usuario">
+        <ScalarProperty Name="nbAlias" ColumnName="nbAlias" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

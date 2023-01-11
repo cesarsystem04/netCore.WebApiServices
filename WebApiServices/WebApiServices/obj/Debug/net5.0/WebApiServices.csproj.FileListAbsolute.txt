@@ -1,0 +1,7 @@
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.csproj.AssemblyReference.cache
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.GeneratedMSBuildEditorConfig.editorconfig
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.AssemblyInfoInputs.cache
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.AssemblyInfo.cs
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.csproj.CoreCompileInputs.cache
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.MvcApplicationPartsAssemblyInfo.cs
+C:\github\netCore.WebApiServices\WebApiServices\WebApiServices\obj\Debug\net5.0\WebApiServices.MvcApplicationPartsAssemblyInfo.cache

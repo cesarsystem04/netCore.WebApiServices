@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AppServiceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aplicacion">
+    <Key>
+      <PropertyRef Name="codAplicacion" />
+    </Key>
+    <Property Name="codAplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idResourceBanner" Type="Int32" />
+    <Property Name="idResourceLogo" Type="Int32" />
+    <Property Name="idResourceImgHome" Type="Int32" />
+    <Property Name="idResourceImgReplicaDer" Type="Int32" />
+    <Property Name="idResourceImgReplicaIzq" Type="Int32" />
+    <Property Name="idCodigoAmbiente" Type="Int32" />
+    <Property Name="nbAplicacion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ActivateLog" Type="Boolean" Nullable="false" />
+    <Property Name="dsTitulo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dsSubTitulo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="noVersion" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nbInstanciaDB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nbDB" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreadoPor" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="feCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DataArea" Relationship="Self.Ref_EmpresaVirtual_To_Aplicacion" FromRole="Aplicacion" ToRole="DataArea" />
+    <NavigationProperty Name="Funcionalidad" Relationship="Self.Ref_Funcionalidad_To_Aplicacion" FromRole="Aplicacion" ToRole="Funcionalidad" />
+    <NavigationProperty Name="MenuMaster" Relationship="Self.Ref_MenuMaster_To_Aplicacion" FromRole="Aplicacion" ToRole="MenuMaster" />
+    <NavigationProperty Name="Rol" Relationship="Self.Ref_Rol_To_Aplicacion" FromRole="Aplicacion" ToRole="Rol" />
+    <NavigationProperty Name="Usuario" Relationship="Self.AplicacionXUsuario" FromRole="Aplicacion" ToRole="Usuario" />
+  </EntityType>
+  <EntityType Name="DataArea">
+    <Key>
+      <PropertyRef Name="cvCia" />
+      <PropertyRef Name="codAplicacion" />
+    </Key>
+    <Property Name="cvCia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="codAplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nbEmpresa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CreadoPor" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="feCreacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="esVirtual" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Aplicacion" Relationship="Self.Ref_EmpresaVirtual_To_Aplicacion" FromRole="DataArea" ToRole="Aplicacion" />
+    <NavigationProperty Name="Usuario" Relationship="Self.Ref_EmpresaVirtual_To_Usuario" FromRole="DataArea" ToRole="Usuario" />
+    <NavigationProperty Name="EmpresaXVirtual" Relationship="Self.Ref1_EmpresaXVirtual_To_DataArea" FromRole="DataArea" ToRole="EmpresaXVirtual" />
+    <NavigationProperty Name="EmpresaXVirtual1" Relationship="Self.Ref2_EmpresaXVirtual_To_DataArea" FromRole="DataArea" ToRole="EmpresaXVirtual" />
+  </EntityType>
+  <EntityType Name="EmpresaXVirtual">
+    <Key>
+      <PropertyRef Name="cvCiaVirtual" />
+      <PropertyRef Name="cvCia" />
+      <PropertyRef Name="codAplicacion" />
+    </Key>
+    <Property Name="cvCiaVirtual" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cvCia" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="codAplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="DataArea" Relationship="Self.Ref1_EmpresaXVirtual_To_DataArea" FromRole="EmpresaXVirtual" ToRole="DataArea" />
+    <NavigationProperty Name="DataArea1" Relationship="Self.Ref2_EmpresaXVirtual_To_DataArea" FromRole="EmpresaXVirtual" ToRole="DataArea" />
+  </EntityType>
+  <EntityType Name="Funcionalidad">
+    <Key>
+      <PropertyRef Name="idFuncionalidad" />
+    </Key>
+    <Property Name="idFuncionalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codAplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idCodigoCategoria" Type="Int32" Nullable="false" />
+    <Property Name="nbFuncionalidad" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dsFuncionalidad" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="nbComponente" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dsTitulo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="dsRutaImagen" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="esConsultar" Type="Boolean" Nullable="false" />
+    <Property Name="esActualizar" Type="Boolean" Nullable="false" />
+    <Property Name="esAgregar" Type="Boolean" Nullable="false" />
+    <Property Name="esImprimir" Type="Boolean" Nullable="false" />
+    <Property Name="esEspecial" Type="Boolean" Nullable="false" />
+    <Property Name="esContent" Type="Boolean" Nullable="false" />
+    <Property Name="urlRutaContent" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="noFilasVisionGeneral" Type="Int16" />
+    <Property Name="idFuncionalidadPadre" Type="Int32" />
+    <Property Name="idCodigoTipoOperacion" Type="Int32" />
+    <Property Name="noOrden" Type="Int32" />
+    <NavigationProperty Name="Aplicacion" Relationship="Self.Ref_Funcionalidad_To_Aplicacion" FromRole="Funcionalidad" ToRole="Aplicacion" />
+    <NavigationProperty Name="Funcionalidad1" Relationship="Self.Ref_Funcionalidad_To_Funcionalidad" FromRole="Funcionalidad" ToRole="Funcionalidad1" />
+    <NavigationProperty Name="Funcionalidad2" Relationship="Self.Ref_Funcionalidad_To_Funcionalidad" FromRole="Funcionalidad1" ToRole="Funcionalidad" />
+    <NavigationProperty Name="FuncionalidadXRol" Relationship="Self.Ref_FuncionalidadXRol_To_Funcionalidad" FromRole="Funcionalidad" ToRole="FuncionalidadXRol" />
+    <NavigationProperty Name="MenuMaster" Relationship="Self.Ref_MenuMaster_To_Funcionalidad" FromRole="Funcionalidad" ToRole="MenuMaster" />
+  </EntityType>
+  <EntityType Name="FuncionalidadXRol">
+    <Key>
+      <PropertyRef Name="codRol" />
+      <PropertyRef Name="idFuncionalidad" />
+      <PropertyRef Name="cvDominio" />
+    </Key>
+    <Property Name="codRol" Type="Int32" Nullable="false" />
+    <Property Name="idFuncionalidad" Type="Int32" Nullable="false" />
+    <Property Name="cvDominio" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="esConsultar" Type="Boolean" Nullable="false" />
+    <Property Name="esActualizar" Type="Boolean" Nullable="false" />
+    <Property Name="esAgregar" Type="Boolean" Nullable="false" />
+    <Property Name="esImprimir" Type="Boolean" Nullable="false" />
+    <Property Name="esEspecial" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Funcionalidad" Relationship="Self.Ref_FuncionalidadXRol_To_Funcionalidad" FromRole="FuncionalidadXRol" ToRole="Funcionalidad" />
+  </EntityType>
+  <EntityType Name="MenuMaster">
+    <Key>
+      <PropertyRef Name="idMenuMaster" />
+    </Key>
+    <Property Name="idMenuMaster" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idFuncionalidad" Type="Int32" Nullable="false" />
+    <Property Name="idMenuMasterParent" Type="Int32" />
+    <Property Name="codAplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idCodigoCategoria" Type="Int32" />
+    <Property Name="nbOpcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="noOrden" Type="Int32" Nullable="false" />
+    <Property Name="dsRutaImagen" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="dsToolTip" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="codOpcionValue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Aplicacion" Relationship="Self.Ref_MenuMaster_To_Aplicacion" FromRole="MenuMaster" ToRole="Aplicacion" />
+    <NavigationProperty Name="Funcionalidad" Relationship="Self.Ref_MenuMaster_To_Funcionalidad" FromRole="MenuMaster" ToRole="Funcionalidad" />
+    <NavigationProperty Name="MenuMaster1" Relationship="Self.Ref_MenuMaster_To_MenuMaster" FromRole="MenuMaster" ToRole="MenuMaster1" />
+    <NavigationProperty Name="MenuMaster2" Relationship="Self.Ref_MenuMaster_To_MenuMaster" FromRole="MenuMaster1" ToRole="MenuMaster" />
+  </EntityType>
+  <EntityType Name="Rol">
+    <Key>
+      <PropertyRef Name="codRol" />
+    </Key>
+    <Property Name="codRol" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="codAplicacion" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nbRol" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dsRol" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Aplicacion" Relationship="Self.Ref_Rol_To_Aplicacion" FromRole="Rol" ToRole="Aplicacion" />
+    <NavigationProperty Name="RolXDominio" Relationship="Self.Ref_RolXDominio_To_Rol" FromRole="Rol" ToRole="RolXDominio" />
+    <NavigationProperty Name="UsuarioXRol" Relationship="Self.Ref_UsuarioXRol_To_Rol" FromRole="Rol" ToRole="UsuarioXRol" />
+  </EntityType>
+  <EntityType Name="RolXDominio">
+    <Key>
+      <PropertyRef Name="codRol" />
+      <PropertyRef Name="cvDominio" />
+    </Key>
+    <Property Name="codRol" Type="Int32" Nullable="false" />
+    <Property Name="cvDominio" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Rol" Relationship="Self.Ref_RolXDominio_To_Rol" FromRole="RolXDominio" ToRole="Rol" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="nbAlias" />
+    </Key>
+    <Property Name="nbAlias" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idCodigoTipoCuenta" Type="Int32" Nullable="false" />
+    <Property Name="nbLanguageCulture" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="noEmpleado" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nbEmpleado" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dsMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="esActivo" Type="Boolean" Nullable="false" />
+    <Property Name="feRegistro" Type="DateTime" Precision="3" />
+    <Property Name="esSuperUsuario" Type="Boolean" />
+    <Property Name="dsEmpresa" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="esNCPermitido" Type="Boolean" />
+    <NavigationProperty Name="DataArea" Relationship="Self.Ref_EmpresaVirtual_To_Usuario" FromRole="Usuario" ToRole="DataArea" />
+    <NavigationProperty Name="UsuarioXRol" Relationship="Self.Ref_UsuarioXRol_To_Usuario" FromRole="Usuario" ToRole="UsuarioXRol" />
+    <NavigationProperty Name="Aplicacion" Relationship="Self.AplicacionXUsuario" FromRole="Usuario" ToRole="Aplicacion" />
+  </EntityType>
+  <EntityType Name="UsuarioXRol">
+    <Key>
+      <PropertyRef Name="codRol" />
+      <PropertyRef Name="nbAlias" />
+    </Key>
+    <Property Name="codRol" Type="Int32" Nullable="false" />
+    <Property Name="nbAlias" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="noOrden" Type="Int32" Nullable="false" />
+    <Property Name="esPrincipal" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Rol" Relationship="Self.Ref_UsuarioXRol_To_Rol" FromRole="UsuarioXRol" ToRole="Rol" />
+    <NavigationProperty Name="Usuario" Relationship="Self.Ref_UsuarioXRol_To_Usuario" FromRole="UsuarioXRol" ToRole="Usuario" />
+  </EntityType>
+  <Association Name="Ref_EmpresaVirtual_To_Aplicacion">
+    <End Role="Aplicacion" Type="Self.Aplicacion" Multiplicity="1" />
+    <End Role="DataArea" Type="Self.DataArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicacion">
+        <PropertyRef Name="codAplicacion" />
+      </Principal>
+      <Dependent Role="DataArea">
+        <PropertyRef Name="codAplicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_Funcionalidad_To_Aplicacion">
+    <End Role="Aplicacion" Type="Self.Aplicacion" Multiplicity="1" />
+    <End Role="Funcionalidad" Type="Self.Funcionalidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicacion">
+        <PropertyRef Name="codAplicacion" />
+      </Principal>
+      <Dependent Role="Funcionalidad">
+        <PropertyRef Name="codAplicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_MenuMaster_To_Aplicacion">
+    <End Role="Aplicacion" Type="Self.Aplicacion" Multiplicity="1" />
+    <End Role="MenuMaster" Type="Self.MenuMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicacion">
+        <PropertyRef Name="codAplicacion" />
+      </Principal>
+      <Dependent Role="MenuMaster">
+        <PropertyRef Name="codAplicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_Rol_To_Aplicacion">
+    <End Role="Aplicacion" Type="Self.Aplicacion" Multiplicity="1" />
+    <End Role="Rol" Type="Self.Rol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aplicacion">
+        <PropertyRef Name="codAplicacion" />
+      </Principal>
+      <Dependent Role="Rol">
+        <PropertyRef Name="codAplicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_EmpresaVirtual_To_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="DataArea" Type="Self.DataArea" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="nbAlias" />
+      </Principal>
+      <Dependent Role="DataArea">
+        <PropertyRef Name="CreadoPor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref1_EmpresaXVirtual_To_DataArea">
+    <End Role="DataArea" Type="Self.DataArea" Multiplicity="1" />
+    <End Role="EmpresaXVirtual" Type="Self.EmpresaXVirtual" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataArea">
+        <PropertyRef Name="cvCia" />
+        <PropertyRef Name="codAplicacion" />
+      </Principal>
+      <Dependent Role="EmpresaXVirtual">
+        <PropertyRef Name="cvCiaVirtual" />
+        <PropertyRef Name="codAplicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref2_EmpresaXVirtual_To_DataArea">
+    <End Role="DataArea" Type="Self.DataArea" Multiplicity="1" />
+    <End Role="EmpresaXVirtual" Type="Self.EmpresaXVirtual" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DataArea">
+        <PropertyRef Name="cvCia" />
+        <PropertyRef Name="codAplicacion" />
+      </Principal>
+      <Dependent Role="EmpresaXVirtual">
+        <PropertyRef Name="cvCia" />
+        <PropertyRef Name="codAplicacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_Funcionalidad_To_Funcionalidad">
+    <End Role="Funcionalidad" Type="Self.Funcionalidad" Multiplicity="0..1" />
+    <End Role="Funcionalidad1" Type="Self.Funcionalidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionalidad">
+        <PropertyRef Name="idFuncionalidad" />
+      </Principal>
+      <Dependent Role="Funcionalidad1">
+        <PropertyRef Name="idFuncionalidadPadre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_FuncionalidadXRol_To_Funcionalidad">
+    <End Role="Funcionalidad" Type="Self.Funcionalidad" Multiplicity="1" />
+    <End Role="FuncionalidadXRol" Type="Self.FuncionalidadXRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionalidad">
+        <PropertyRef Name="idFuncionalidad" />
+      </Principal>
+      <Dependent Role="FuncionalidadXRol">
+        <PropertyRef Name="idFuncionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_MenuMaster_To_Funcionalidad">
+    <End Role="Funcionalidad" Type="Self.Funcionalidad" Multiplicity="1" />
+    <End Role="MenuMaster" Type="Self.MenuMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Funcionalidad">
+        <PropertyRef Name="idFuncionalidad" />
+      </Principal>
+      <Dependent Role="MenuMaster">
+        <PropertyRef Name="idFuncionalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_MenuMaster_To_MenuMaster">
+    <End Role="MenuMaster" Type="Self.MenuMaster" Multiplicity="0..1" />
+    <End Role="MenuMaster1" Type="Self.MenuMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuMaster">
+        <PropertyRef Name="idMenuMaster" />
+      </Principal>
+      <Dependent Role="MenuMaster1">
+        <PropertyRef Name="idMenuMasterParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_RolXDominio_To_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="RolXDominio" Type="Self.RolXDominio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="codRol" />
+      </Principal>
+      <Dependent Role="RolXDominio">
+        <PropertyRef Name="codRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_UsuarioXRol_To_Rol">
+    <End Role="Rol" Type="Self.Rol" Multiplicity="1" />
+    <End Role="UsuarioXRol" Type="Self.UsuarioXRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Rol">
+        <PropertyRef Name="codRol" />
+      </Principal>
+      <Dependent Role="UsuarioXRol">
+        <PropertyRef Name="codRol" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Ref_UsuarioXRol_To_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="UsuarioXRol" Type="Self.UsuarioXRol" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="nbAlias" />
+      </Principal>
+      <Dependent Role="UsuarioXRol">
+        <PropertyRef Name="nbAlias" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AplicacionXUsuario">
+    <End Role="Aplicacion" Type="Self.Aplicacion" Multiplicity="*" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="AppServiceDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aplicacion" EntityType="Self.Aplicacion" />
+    <EntitySet Name="DataArea" EntityType="Self.DataArea" />
+    <EntitySet Name="EmpresaXVirtual" EntityType="Self.EmpresaXVirtual" />
+    <EntitySet Name="Funcionalidad" EntityType="Self.Funcionalidad" />
+    <EntitySet Name="FuncionalidadXRol" EntityType="Self.FuncionalidadXRol" />
+    <EntitySet Name="MenuMaster" EntityType="Self.MenuMaster" />
+    <EntitySet Name="Rol" EntityType="Self.Rol" />
+    <EntitySet Name="RolXDominio" EntityType="Self.RolXDominio" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+    <EntitySet Name="UsuarioXRol" EntityType="Self.UsuarioXRol" />
+    <AssociationSet Name="Ref_EmpresaVirtual_To_Aplicacion" Association="Self.Ref_EmpresaVirtual_To_Aplicacion">
+      <End Role="Aplicacion" EntitySet="Aplicacion" />
+      <End Role="DataArea" EntitySet="DataArea" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_Funcionalidad_To_Aplicacion" Association="Self.Ref_Funcionalidad_To_Aplicacion">
+      <End Role="Aplicacion" EntitySet="Aplicacion" />
+      <End Role="Funcionalidad" EntitySet="Funcionalidad" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_MenuMaster_To_Aplicacion" Association="Self.Ref_MenuMaster_To_Aplicacion">
+      <End Role="Aplicacion" EntitySet="Aplicacion" />
+      <End Role="MenuMaster" EntitySet="MenuMaster" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_Rol_To_Aplicacion" Association="Self.Ref_Rol_To_Aplicacion">
+      <End Role="Aplicacion" EntitySet="Aplicacion" />
+      <End Role="Rol" EntitySet="Rol" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_EmpresaVirtual_To_Usuario" Association="Self.Ref_EmpresaVirtual_To_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="DataArea" EntitySet="DataArea" />
+    </AssociationSet>
+    <AssociationSet Name="Ref1_EmpresaXVirtual_To_DataArea" Association="Self.Ref1_EmpresaXVirtual_To_DataArea">
+      <End Role="DataArea" EntitySet="DataArea" />
+      <End Role="EmpresaXVirtual" EntitySet="EmpresaXVirtual" />
+    </AssociationSet>
+    <AssociationSet Name="Ref2_EmpresaXVirtual_To_DataArea" Association="Self.Ref2_EmpresaXVirtual_To_DataArea">
+      <End Role="DataArea" EntitySet="DataArea" />
+      <End Role="EmpresaXVirtual" EntitySet="EmpresaXVirtual" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_Funcionalidad_To_Funcionalidad" Association="Self.Ref_Funcionalidad_To_Funcionalidad">
+      <End Role="Funcionalidad" EntitySet="Funcionalidad" />
+      <End Role="Funcionalidad1" EntitySet="Funcionalidad" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_FuncionalidadXRol_To_Funcionalidad" Association="Self.Ref_FuncionalidadXRol_To_Funcionalidad">
+      <End Role="Funcionalidad" EntitySet="Funcionalidad" />
+      <End Role="FuncionalidadXRol" EntitySet="FuncionalidadXRol" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_MenuMaster_To_Funcionalidad" Association="Self.Ref_MenuMaster_To_Funcionalidad">
+      <End Role="Funcionalidad" EntitySet="Funcionalidad" />
+      <End Role="MenuMaster" EntitySet="MenuMaster" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_MenuMaster_To_MenuMaster" Association="Self.Ref_MenuMaster_To_MenuMaster">
+      <End Role="MenuMaster" EntitySet="MenuMaster" />
+      <End Role="MenuMaster1" EntitySet="MenuMaster" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_RolXDominio_To_Rol" Association="Self.Ref_RolXDominio_To_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="RolXDominio" EntitySet="RolXDominio" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_UsuarioXRol_To_Rol" Association="Self.Ref_UsuarioXRol_To_Rol">
+      <End Role="Rol" EntitySet="Rol" />
+      <End Role="UsuarioXRol" EntitySet="UsuarioXRol" />
+    </AssociationSet>
+    <AssociationSet Name="Ref_UsuarioXRol_To_Usuario" Association="Self.Ref_UsuarioXRol_To_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="UsuarioXRol" EntitySet="UsuarioXRol" />
+    </AssociationSet>
+    <AssociationSet Name="AplicacionXUsuario" Association="Self.AplicacionXUsuario">
+      <End Role="Aplicacion" EntitySet="Aplicacion" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

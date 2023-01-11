@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebApiServices</name>
+    </assembly>
+    <members>
+        <member name="T:WebApiServices.Api.BaseApiController`1">
+            <summary>
+            Abstract BaseApi Controller Class
+            </summary>
+        </member>
+    </members>
+</doc>
