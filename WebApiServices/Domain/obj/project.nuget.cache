@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "k1J0OT6e81TEnNSu2vAZwg1zrqZKObDZlRFmnTDYZ03DtdhpV/6a3outtbC7tdxnsIAkWea5SCAHjJhKXYrMxw==",
+  "dgSpecHash": "CCL2CPGwwiYlY6yq43hAq/T5PFBi7Dt5/dhQF+2n/9IN94F3/GqMmR8/tSAy55qWqs/RBnY7uKJBjcVHYfoWUg==",
   "success": true,
-  "projectFilePath": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\c.torres\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\c.torres\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\c.torres\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
     "C:\\Users\\c.torres\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.1\\microsoft.entityframeworkcore.abstractions.7.0.1.nupkg.sha512",
     "C:\\Users\\c.torres\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.1\\microsoft.entityframeworkcore.analyzers.7.0.1.nupkg.sha512",

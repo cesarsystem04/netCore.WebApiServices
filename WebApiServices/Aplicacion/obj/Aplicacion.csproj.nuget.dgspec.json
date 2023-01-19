@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\github\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj": {}
+    "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj": {}
   },
   "projects": {
-    "C:\\github\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj": {
+    "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj",
+        "projectUniqueName": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj",
         "projectName": "Aplicacion",
-        "projectPath": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj",
+        "projectPath": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\Aplicacion.csproj",
         "packagesPath": "C:\\Users\\c.torres\\.nuget\\packages\\",
-        "outputPath": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\obj\\",
+        "outputPath": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Aplicacion\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -37,8 +37,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj"
+              "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj"
               }
             }
           }
@@ -57,9 +57,25 @@
               "target": "Package",
               "version": "[12.0.0, )"
             },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[11.1.0, )"
+            },
+            "MediatR.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -82,14 +98,14 @@
         }
       }
     },
-    "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj": {
+    "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj",
+        "projectPath": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\c.torres\\.nuget\\packages\\",
-        "outputPath": "C:\\github\\netCore.WebApiServices\\WebApiServices\\Domain\\obj\\",
+        "outputPath": "C:\\github\\netCore.WebApiServices\\netCore.WebApiServices\\WebApiServices\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages",
@@ -127,6 +143,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.1, )"

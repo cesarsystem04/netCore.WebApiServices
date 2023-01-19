@@ -1,0 +1,356 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C7900E0-D623-46E9-B997-6E0DBB10C14B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CARSO.AppService.Provider</RootNamespace>
+    <AssemblyName>CARSO.AppService.Provider</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ProcessUpdate.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CARSO.LogLibrary, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9402fa59523b4495, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CARSO.LogLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.8.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\..\..\Corporativo.BovedaFiscal\Src\packages\DocumentFormat.OpenXml.2.8.1\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.5, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.5\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\AppServiceClient.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\Codigo.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\Departamento.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\DiaFestivo.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\Empleado.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\Empresa.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\PeriodoTransaccional.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_AreaDePersonal.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_AreaFuncional.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_AreaNomina.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_CentroCosto.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Division.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Estado.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_EstadoCivil.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Funcion.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Jerarquia.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Pais.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_RFCSociedad.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Sociedad.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_SubDivision.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_TipoContrato.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_TipoPosicion.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_Ubicacion.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_UnidadOrganizativa.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\Sector.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\TipoProcesoXPeriodo.cs" />
+    <Compile Include="Client\AppServiceClient\Kernel\Aplicacion.cs" />
+    <Compile Include="Client\AppServiceClient\Kernel\Atributo.cs" />
+    <Compile Include="Client\AppServiceClient\Kernel\CultureCode.cs" />
+    <Compile Include="Client\AppServiceClient\Kernel\Etiqueta.cs" />
+    <Compile Include="Client\AppServiceClient\Kernel\EtiquetaConjunto.cs" />
+    <Compile Include="Client\AppServiceClient\Kernel\EtiquetaXCultura.cs" />
+    <Compile Include="Client\AppServiceClient\LogBook\Log.cs" />
+    <Compile Include="Client\AppServiceClient\Configuration\SAP_EmpleadosSAPContratos.cs" />
+    <Compile Include="Client\AppServiceClient\Security\AlcanceOrganizacional.cs" />
+    <Compile Include="Client\AppServiceClient\Security\AutorizadoresBA.cs" />
+    <Compile Include="Client\AppServiceClient\Security\CuentaServicioLDAP.cs" />
+    <Compile Include="Client\AppServiceClient\Security\Funcionalidad.cs" />
+    <Compile Include="Client\AppServiceClient\Security\FuncionalidadXRol.cs" />
+    <Compile Include="Client\AppServiceClient\Security\MenuMaster.cs" />
+    <Compile Include="Client\AppServiceClient\Security\Rol.cs" />
+    <Compile Include="Client\AppServiceClient\Security\RolXDominio.cs" />
+    <Compile Include="Client\AppServiceClient\Security\Usuario.cs" />
+    <Compile Include="Client\AppServiceClient\Security\UsuarioXRol.cs" />
+    <Compile Include="Client\AppServiceClient\Work\Bitacora.cs" />
+    <Compile Include="Client\AppServiceClient\Work\Parametro.cs" />
+    <Compile Include="Client\AppServiceClient\Work\RequestWebApi.cs" />
+    <Compile Include="Client\AppServiceClient\Work\Ticket.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\Departamento.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\DiaFestivo.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_AreaDePersonal.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_AreaFuncional.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_AreaNomina.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_CentroCosto.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Division.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_EmpleadosSAPContratos.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Estado.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_EstadoCivil.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Funcion.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Jerarquia.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Pais.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_RFCSociedad.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Sociedad.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_SubDivision.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_TipoContrato.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_TipoPosicion.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_Ubicacion.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\SAP_UnidadOrganizativa.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\Sector.cs" />
+    <Compile Include="Provider\DataAccess\Security\AutorizadoresBA.cs" />
+    <Compile Include="Provider\DataAccess\Work\RequestWebApi.cs" />
+    <Compile Include="Provider\IAppServiceChannel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Provider\AppServiceProvider.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\Codigo.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\Empleado.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\Empresa.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\PeriodoTransaccional.cs" />
+    <Compile Include="Provider\DataAccess\Configuration\TipoProcesoXPeriodo.cs" />
+    <Compile Include="Provider\DataAccess\Kernel\Aplicacion.cs" />
+    <Compile Include="Provider\DataAccess\Kernel\Atributo.cs" />
+    <Compile Include="Provider\DataAccess\Kernel\CultureCode.cs" />
+    <Compile Include="Provider\DataAccess\Kernel\Etiqueta.cs" />
+    <Compile Include="Provider\DataAccess\Kernel\EtiquetaConjunto.cs" />
+    <Compile Include="Provider\DataAccess\Kernel\EtiquetaXCultura.cs" />
+    <Compile Include="Provider\DataAccess\LogBook\Log.cs" />
+    <Compile Include="Provider\DataAccess\Security\AlcanceOrganizacional.cs" />
+    <Compile Include="Provider\DataAccess\Security\CuentaServicioLDAP.cs" />
+    <Compile Include="Provider\DataAccess\Security\Funcionalidad.cs" />
+    <Compile Include="Provider\DataAccess\Security\FuncionalidadXRol.cs" />
+    <Compile Include="Provider\DataAccess\Security\MenuMaster.cs" />
+    <Compile Include="Provider\DataAccess\Security\Rol.cs" />
+    <Compile Include="Provider\DataAccess\Security\RolXDominio.cs" />
+    <Compile Include="Provider\DataAccess\Security\Usuario.cs" />
+    <Compile Include="Provider\DataAccess\Security\UsuarioXRol.cs" />
+    <Compile Include="Provider\DataAccess\Work\Bitacora.cs" />
+    <Compile Include="Provider\DataAccess\Work\Parametro.cs" />
+    <Compile Include="Provider\DataAccess\Work\Ticket.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Containers\Configuration\Catalogo.cs" />
+    <Compile Include="Service\Containers\Configuration\Codigo.cs" />
+    <Compile Include="Service\Containers\Configuration\DepartamentoDM.cs" />
+    <Compile Include="Service\Containers\Configuration\Empleado.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_EmpleadosSAPContratos.cs" />
+    <Compile Include="Service\Containers\Configuration\EmpresaDM.cs" />
+    <Compile Include="Service\Containers\Configuration\FilialDM.cs" />
+    <Compile Include="Service\Containers\Configuration\ParametrosBusquedas.cs" />
+    <Compile Include="Service\Containers\Configuration\PeriodoTransaccional.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_AreaDePersonal.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_AreaFuncional.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_AreaNomina.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_CentroCosto.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Division.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Estado.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_EstadoCivil.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Funcion.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Jerarquia.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Pais.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_RFCSociedad.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Sociedad.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_SubDivision.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_TipoContrato.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_TipoPosicion.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_UnidadOrganizativa.cs" />
+    <Compile Include="Service\Containers\Configuration\Sector.cs" />
+    <Compile Include="Service\Containers\Configuration\TipoProcesoXPeriodo.cs" />
+    <Compile Include="Service\Containers\Configuration\SAP_Ubicacion.cs" />
+    <Compile Include="Service\Containers\Configuration\DiaFestivo.cs" />
+    <Compile Include="Service\Containers\Kernel\Aplicacion.cs" />
+    <Compile Include="Service\Containers\Kernel\Atributo.cs" />
+    <Compile Include="Service\Containers\Kernel\CultureCode.cs" />
+    <Compile Include="Service\Containers\Kernel\Etiqueta.cs" />
+    <Compile Include="Service\Containers\Kernel\EtiquetaConjunto.cs" />
+    <Compile Include="Service\Containers\Kernel\EtiquetaXCultura.cs" />
+    <Compile Include="Service\Containers\Security\AlcanceOrganizacional.cs" />
+    <Compile Include="Service\Containers\Security\AutorizadoresBA.cs" />
+    <Compile Include="Service\Containers\Security\CuentaServicioLDAP.cs" />
+    <Compile Include="Service\Containers\Security\Funcionalidad.cs" />
+    <Compile Include="Service\Containers\Security\FuncionalidadXRol.cs" />
+    <Compile Include="Service\Containers\Security\MenuMaster.cs" />
+    <Compile Include="Service\Containers\Security\Rol.cs" />
+    <Compile Include="Service\Containers\Security\RolXDominio.cs" />
+    <Compile Include="Service\Containers\Security\Usuario.cs" />
+    <Compile Include="Service\Containers\Security\UsuarioXRol.cs" />
+    <Compile Include="Service\Containers\Work\Bitacora.cs" />
+    <Compile Include="Service\Containers\Work\Parametro.cs" />
+    <Compile Include="Service\Containers\Work\RequestWebApi.cs" />
+    <Compile Include="Service\Containers\Work\Ticket.cs" />
+    <Compile Include="Service\Interface\Configuration\Codigo.cs" />
+    <Compile Include="Service\Interface\Configuration\Departamento.cs" />
+    <Compile Include="Service\Interface\Configuration\DiaFestivo.cs" />
+    <Compile Include="Service\Interface\Configuration\Empleado.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_EmpleadosSAPContratos.cs" />
+    <Compile Include="Service\Interface\Configuration\Empresa.cs" />
+    <Compile Include="Service\Interface\Configuration\PeriodoTransaccional.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_AreaDePersonal.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_AreaFuncional.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_AreaNomina.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_CentroCosto.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Division.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Estado.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_EstadoCivil.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Funcion.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Jerarquia.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Pais.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_RFCSociedad.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Sociedad.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_SubDivision.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_TipoContrato.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_TipoPosicion.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_Ubicacion.cs" />
+    <Compile Include="Service\Interface\Configuration\SAP_UnidadOrganizativa.cs" />
+    <Compile Include="Service\Interface\Configuration\Sector.cs" />
+    <Compile Include="Service\Interface\Configuration\TipoProcesoXPeriodo.cs" />
+    <Compile Include="Service\Interface\IAppService.cs" />
+    <Compile Include="Service\Interface\Kernel\Aplicacion.cs" />
+    <Compile Include="Service\Interface\Kernel\Atributo.cs" />
+    <Compile Include="Service\Interface\Kernel\CultureCode.cs" />
+    <Compile Include="Service\Interface\Kernel\Etiqueta.cs" />
+    <Compile Include="Service\Interface\Kernel\EtiquetaConjunto.cs" />
+    <Compile Include="Service\Interface\Kernel\EtiquetaXCultura.cs" />
+    <Compile Include="Service\Interface\LogBook\Log.cs" />
+    <Compile Include="Service\Interface\Security\AlcanceOrganizacional.cs" />
+    <Compile Include="Service\Interface\Security\AutorizadoresBA.cs" />
+    <Compile Include="Service\Interface\Security\CuentaServicioLDAP.cs" />
+    <Compile Include="Service\Interface\Security\FuncionaidadXRol.cs" />
+    <Compile Include="Service\Interface\Security\Funcionalidad.cs" />
+    <Compile Include="Service\Interface\Security\MenuMaster.cs" />
+    <Compile Include="Service\Interface\Security\Rol.cs" />
+    <Compile Include="Service\Interface\Security\RolXDominio.cs" />
+    <Compile Include="Service\Interface\Security\Usuario.cs" />
+    <Compile Include="Service\Interface\Security\UsuarioXRol.cs" />
+    <Compile Include="Service\Interface\Work\Bitacora.cs" />
+    <Compile Include="Service\Interface\Work\Parametro.cs" />
+    <Compile Include="Service\Interface\Work\RequestWebApi.cs" />
+    <Compile Include="Service\Interface\Work\Ticket.cs" />
+    <Compile Include="Service\Operations\Configuration\Codigo.cs" />
+    <Compile Include="Service\Operations\Configuration\Departamento.cs" />
+    <Compile Include="Service\Operations\Configuration\DiaFestivo.cs" />
+    <Compile Include="Service\Operations\Configuration\Empleado.cs" />
+    <Compile Include="Service\Operations\Configuration\Empresa.cs" />
+    <Compile Include="Service\Operations\Configuration\Filial.cs" />
+    <Compile Include="Service\Operations\Configuration\PeriodoTransaccional.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_AreaDePersonal.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_AreaFuncional.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_AreaNomina.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_CentroCosto.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Division.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_EmpleadosSAPContratos.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Estado.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_EstadoCivil.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Funcion.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Jerarquia.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Pais.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_RFCSociedad.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Sociedad.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_SubDivision.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_TipoContrato.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_TipoPosicion.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_Ubicacion.cs" />
+    <Compile Include="Service\Operations\Configuration\SAP_UnidadOrganizativa.cs" />
+    <Compile Include="Service\Operations\Configuration\Sector.cs" />
+    <Compile Include="Service\Operations\Configuration\TipoProcesoXPeriodo.cs" />
+    <Compile Include="Service\Operations\Kernel\Aplicacion.cs" />
+    <Compile Include="Service\Operations\Kernel\Atributo.cs" />
+    <Compile Include="Service\Operations\Kernel\CultureCode.cs" />
+    <Compile Include="Service\Operations\Kernel\Etiqueta.cs" />
+    <Compile Include="Service\Operations\Kernel\EtiquetaConjunto.cs" />
+    <Compile Include="Service\Operations\Kernel\EtiquetaXCultura.cs" />
+    <Compile Include="Service\Operations\LogBook\Log.cs" />
+    <Compile Include="Service\Operations\Request\BaseRequest.cs" />
+    <Compile Include="Service\Operations\Request\UsuarioRequest.cs" />
+    <Compile Include="Service\Operations\Security\AlcanceOrganizacional.cs" />
+    <Compile Include="Service\Operations\Security\AutorizadoresBA.cs" />
+    <Compile Include="Service\Operations\Security\CuentaServicioLDAP.cs" />
+    <Compile Include="Service\Operations\Security\Funcionalidad.cs" />
+    <Compile Include="Service\Operations\Security\FuncionalidadXRol.cs" />
+    <Compile Include="Service\Operations\Security\MenuMaster.cs" />
+    <Compile Include="Service\Operations\Security\Rol.cs" />
+    <Compile Include="Service\Operations\Security\RolXDominio.cs" />
+    <Compile Include="Service\Operations\Security\Usuario.cs" />
+    <Compile Include="Service\Operations\Security\UsuarioXRol.cs" />
+    <Compile Include="Service\Operations\Work\Bitacora.cs" />
+    <Compile Include="Service\Operations\Work\Parametro.cs" />
+    <Compile Include="Service\Operations\Work\RequestWebApi.cs" />
+    <Compile Include="Service\Operations\Work\Ticket.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="key.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\ProcessUpdate.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Client\Interface\" />
+    <Folder Include="External References\" />
+    <Folder Include="Service\Containers\LogBook\" />
+    <Folder Include="Service\Containers\Util\" />
+    <Folder Include="Service\Operations\Util\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
