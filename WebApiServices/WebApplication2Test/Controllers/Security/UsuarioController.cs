@@ -31,8 +31,7 @@ namespace WebApplication2Test.Controllers.Security
         [HttpPost("GetUsuariosTest")]
         public IActionResult GetUsuariosTest(UsuarioRequest request)
         {
-            CARSO.AppService.ServiceDataContainers.Usuario usuarioTest = new CARSO.AppService.ServiceDataContainers.Usuario();
-            //AppService app = new AppService();
+            CARSO.AppService.ServiceDataContainers.Usuario usuarioTest = new CARSO.AppService.ServiceDataContainers.Usuario();            
             _app.GetUsuarioByKey(request.nbAliasUsuario, ref usuarioTest);
             return Ok(usuarioTest);
 
@@ -48,7 +47,6 @@ namespace WebApplication2Test.Controllers.Security
                 CARSO.AppService.ServiceDataContainers.FuncionalidadList oFuncionalidadList = new CARSO.AppService.ServiceDataContainers.FuncionalidadList();
                 _app.GetFuncionalidadByUsuario(request.nbAliasUsuario, request.codAplicacion, ref oFuncionalidadList);
                 List<CARSO.AppService.ServiceDataContainers.Funcionalidad> funcionalidad = new List<CARSO.AppService.ServiceDataContainers.Funcionalidad>();
-
                 oFuncionalidadList.lstFuncionalidad.ForEach(f => 
                 {
                     funcionalidad.Add(f);

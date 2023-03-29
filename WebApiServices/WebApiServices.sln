@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{C9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CARSO.AppService.Provider", "CARSO.AppService.Provider\CARSO.AppService.Provider.csproj", "{2C7900E0-D623-46E9-B997-6E0DBB10C14B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication3", "WebApplication3\WebApplication3.csproj", "{A7D8012B-1690-4D04-8917-ABF43438AB29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{2C7900E0-D623-46E9-B997-6E0DBB10C14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C7900E0-D623-46E9-B997-6E0DBB10C14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C7900E0-D623-46E9-B997-6E0DBB10C14B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7D8012B-1690-4D04-8917-ABF43438AB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7D8012B-1690-4D04-8917-ABF43438AB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7D8012B-1690-4D04-8917-ABF43438AB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7D8012B-1690-4D04-8917-ABF43438AB29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
